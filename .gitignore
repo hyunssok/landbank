@@ -1,0 +1,9 @@
+# Modules
+node_modules/
+
+# Build Bundles
+dist/
+
+# env
+/vars
+.env
