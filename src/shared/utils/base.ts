@@ -24,7 +24,6 @@ export const mvh = (size: number): string => {
 
 export const REGEX = {
 	emailRegex: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-	// password : /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,16}$/,
 	passwordRegex: /^[a-zA-Z0-9\\!@#$%^&*()]*$/,
 	engRegex: /^[a-zA-Z0-9]*$/,
 	engNumberRegex: /^[a-zA-Z0-9]*$/,
