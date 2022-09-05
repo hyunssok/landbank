@@ -6,6 +6,7 @@ import { useWindowSize } from '@shared/hooks';
 import { PrefixOfEmotion } from '@typings/base';
 import { rootRouter } from './routes';
 import GuardRoute from '@shared/guards/GuardRoute';
+import Footer from '@components/Footer';
 
 // IOS 창 사이즈 고정
 const useInitDeviceHeight = () => {
@@ -31,8 +32,9 @@ const App: FC = () => {
 						<Route key={path} path={path} component={component} exact={exact} />
 					),
 				)}
-				<Redirect to="/home" />
+				{/* <Redirect to="/home" /> */}
 			</Switch>
+			<Footer />
 		</S.Container>
 	);
 };
