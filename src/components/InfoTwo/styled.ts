@@ -59,10 +59,42 @@ export const AskB = styled.b`
   font-size: ${unit(55)};
 `;
 
-export const InvestmentBox = styled.div``;
+export const InvestmentBox = styled.div`
+  width: ${unit(430)};
+  margin-left: ${unit(180)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
-export const InvestmentTop = styled.div``;
+export const InvestmentTop = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
-export const InvestmentBottom = styled.div``;
+export const InvestmentBottom = styled.div`
+  width: 100%;
+  margin-top: ${unit(34)};
 
-export const InvestmentItem = styled.div``;
+  & > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+export const InvestmentItem = styled.div`
+  width: ${unit(202)};
+  height: ${unit(128)};
+  border-radius: ${unit(30)};
+  font-size: ${unit(30)};
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 9.9px 0.1px rgba(0, 0, 0, 0.6);
+  background-image: linear-gradient(to top, #600808, #c80000);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;

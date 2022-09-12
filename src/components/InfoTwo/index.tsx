@@ -4,6 +4,7 @@ import * as S from './styled';
 
 
 const InfoTwo : FC = () => {
+
   return(
     <S.Container>
       <S.Infoinner>
@@ -21,11 +22,11 @@ const InfoTwo : FC = () => {
           </S.AskUl>
           <S.InvestmentBox>
             <S.InvestmentTop>
-              <S.InvestmentItem>{`반값/급매\n물건접수`}</S.InvestmentItem>
-              <S.InvestmentItem>{`반값/급매\n물건접수`}</S.InvestmentItem>
+              <S.InvestmentItem onClick={()=>window.open('https://naver.me/5Bx3VE6U','_blink')}>{`반값/급매\n투자 정보`}</S.InvestmentItem>
+              <S.InvestmentItem onClick={()=>window.open('https://naver.me/xI8zmaRV','_blink')}>{`반값/급매\n물건 접수`}</S.InvestmentItem>
             </S.InvestmentTop>
             <S.InvestmentBottom>
-              <S.InvestmentItem>{`실전투자반 무료상담 신청`}</S.InvestmentItem>
+              <S.InvestmentItem onClick={()=>window.open('http://naver.me/FuVcyeWk','_blink')}>{`실전투자반 무료상담 신청`}</S.InvestmentItem>
             </S.InvestmentBottom>
           </S.InvestmentBox>
         </S.InfoBox>
