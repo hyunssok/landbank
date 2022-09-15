@@ -8,6 +8,7 @@ export const Container = styled.section`
   ${backgroundImageCover}
   height: 100vh;
   background-image: url(${IMG_MAINBG});
+  width: 100%;
 `;
 
 export const IconBox = styled.div`

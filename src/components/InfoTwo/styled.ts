@@ -12,6 +12,7 @@ export const Container = styled.section`
   justify-content: center;
   color: #fff;
   font-family: NotoSansCJKkr;
+  width: 100%;
   height: 100vh;
 `;
 

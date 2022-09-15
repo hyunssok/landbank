@@ -7,6 +7,10 @@ export const Container = styled.footer`
   width: 100%;
   background-color: #600808;
   box-sizing: unset;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  z-index: 99;
 `;
 
 export const CompanyUl = styled.ul`

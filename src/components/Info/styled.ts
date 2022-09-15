@@ -13,6 +13,8 @@ export const Container = styled.section`
   align-items: center;
   justify-content: center;
   font-family: NotoSansCJKkr;
+  width: 100%;
+  height: 100vh;
   padding: ${unit(139)} 0 ${unit(150)};
 `;
 
