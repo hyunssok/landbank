@@ -2,16 +2,19 @@ import styled from '@emotion/styled';
 import { unit, IMG_URI, munit } from '@shared/utils/base';
 import { backgroundImageCover, mobilePoint } from '@styles/globalStyles';
 
-const IMG_SUBBG = `${IMG_URI}/subbg.png`;
+const IMG_SUBBG = `${IMG_URI}/sub_bg.png`;
 
 export const Container = styled.section`
-	padding: ${unit(81)} ${unit(341)} ${unit(68)};
+	/* padding: ${unit(81)} ${unit(341)} ${unit(68)}; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	position: relative;
+	height: 100vh;
+	padding-bottom: ${unit(100)};
 	font-family: NotoSansCJKkr;
+	width: 100%;
 
 	@media screen and (max-width: ${mobilePoint}) {
 		padding: ${munit(47)} ${munit(92)} ${munit(275)};
@@ -19,10 +22,19 @@ export const Container = styled.section`
 	}
 `;
 
+export const InnerArticle = styled.article`
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
 export const BgFigure = styled.figure`
 	${backgroundImageCover};
 	background-image: url(${IMG_SUBBG});
-	background-size: 170% 100%;
+	background-size: 100% auto;
 	z-index: 99;
 	width: 100%;
 	min-height: ${unit(701)};
@@ -51,19 +63,28 @@ export const BgFigure = styled.figure`
 export const VideoBox = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
+	z-index: 1000;
 	gap: ${unit(28)};
+	width: ${unit(1180)};
 
-	img {
-		width: ${unit(394)};
-		height: ${unit(222)};
+	.youtubeVideo {
+		width: calc((100% - ${unit(28)} * 2) / 3) !important;
+		iframe {
+			width: 100%;
+			height: ${unit(222)} !important;
+		}
 	}
 
 	@media screen and (max-width: ${mobilePoint}) {
 		flex-direction: column;
-		img {
-			width: 100%;
-			height: ${munit(318)};
+		gap: ${munit(45)};
+		.youtubeVideo {
+			width: 100% !important;
+			iframe {
+				width: 100%;
+				height: ${munit(315)} !important;
+			}
 		}
 	}
 `;

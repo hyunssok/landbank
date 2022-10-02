@@ -7,6 +7,7 @@ const IMG_MAINBG = `${IMG_URI}/mainbg.png`;
 export const Container = styled.section`
 	${backgroundImageCover}
 	height: 100vh;
+	padding-bottom: ${unit(100)};
 	background-image: url(${IMG_MAINBG});
 	width: 100%;
 

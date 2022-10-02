@@ -14,6 +14,7 @@ export const Container = styled.section`
 	font-family: NotoSansCJKkr;
 	width: 100%;
 	height: 100vh;
+	padding-bottom: ${unit(100)};
 
 	@media screen and (max-width: ${mobilePoint}) {
 		background-position: 0%;

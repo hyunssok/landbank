@@ -16,7 +16,7 @@ export const Container = styled.section`
 	font-family: NotoSansCJKkr;
 	width: 100%;
 	height: 100vh;
-	padding: ${unit(139)} 0 ${unit(150)};
+	padding-bottom: ${unit(100)};
 
 	@media screen and (max-width: ${mobilePoint}) {
 		background-position: 27% !important;
@@ -145,6 +145,7 @@ export const CheckLi = styled.li`
 			width: ${unit(37)};
 			height: ${unit(37)};
 			background-image: url(${ICON_CHECK});
+			background-size: ${unit(37)} auto;
 		}
 	}
 
@@ -163,6 +164,7 @@ export const CheckLi = styled.li`
 				content: '';
 				width: ${munit(53)};
 				height: ${munit(43)};
+				background-size: ${munit(42)} auto;
 			}
 		}
 
