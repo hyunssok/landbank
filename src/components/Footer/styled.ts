@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { unit } from '@shared/utils/base';
+import { mobilePoint } from "@styles/globalStyles";
 
 export const Container = styled.footer`
   min-height: ${unit(46)};
@@ -11,6 +12,10 @@ export const Container = styled.footer`
   bottom: 0%;
   width: 100%;
   z-index: 99;
+
+  @media screen and (max-width: ${mobilePoint}){
+    display: none;
+  }
 `;
 
 export const CompanyUl = styled.ul`
