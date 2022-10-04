@@ -76,6 +76,7 @@ const config: Configuration = {
 		new ForkTsCheckerWebpackPlugin({ async: false }),
 		new webpack.EnvironmentPlugin({
 			NODE_ENV: isDevelopment ? 'development' : 'production',
+			API_URL: isDevelopment ? 'http://localhost/api' : 'http://3.38.96.81',
 		}),
 		new CleanWebpackPlugin(),
 		new Dotenv(),

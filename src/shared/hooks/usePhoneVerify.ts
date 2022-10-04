@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-// import { useDialog } from '@shared/hooks/useDialog';
-import * as apiActions from '@shared/apis/apiActions';
 import _ from 'lodash';
 
 const LIMIT_TIME = 180;

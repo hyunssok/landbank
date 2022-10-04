@@ -1,43 +1,58 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import Image from '@components/Image';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import * as S from './styled';
 import SearchBox from './searchBox/index';
 import { point } from '@styles/globalStyles';
 import { useWindowSize } from '@shared/hooks';
 import YouTube from 'react-youtube';
-import { unit } from '@shared/utils/base';
 import _ from 'lodash';
-
-const IMG_YOUTUBE = 'youtube.png';
+import { useEffect } from 'react';
+import yotubeAPI from '@shared/apis/yotubeAPI';
 
 const Sub: FC = () => {
 	const { width } = useWindowSize();
-	const mobilePoint = width <= point;
+	const [list, setList] = useState([]);
+	const isMobile = width <= point;
+
+	const getYoutubes9 = async () => {
+		try {
+			const { data } = await yotubeAPI.get();
+			setList(data);
+		} catch {
+			alert('네트워크 오류 발생. 다시 시도해주세요.');
+		}
+	};
+
+	useEffect(() => {
+		getYoutubes9();
+	}, []);
+
 	return (
 		<S.Container>
-			{mobilePoint ? (
+			{isMobile ? (
 				<>
 					<S.BgFigure />
 					<SearchBox />
 					<S.VideoBox>
-						{_.range(0, 3).map((i: number) => (
-							<YouTube
-								key={i}
-								videoId="01mms0B7QCY"
-								className="youtubeVideo"
-								opts={{
-									playerVars: {
-										autoplay: 0,
-										rel: 0,
-										modestbranding: 1,
-									},
-								}}
-								onEnd={(e) => {
-									e.target.stopVideo(0);
-								}}
-							/>
-						))}
+						{list
+							.filter((a: any, i: number) => i < 3)
+							.map((item: any, i: number) => (
+								<YouTube
+									key={item.id}
+									videoId={item.link}
+									className="youtubeVideo"
+									opts={{
+										playerVars: {
+											autoplay: 0,
+											rel: 0,
+											modestbranding: 1,
+										},
+									}}
+									onEnd={(e) => {
+										e.target.stopVideo(0);
+									}}
+								/>
+							))}
 					</S.VideoBox>
 					<S.BgFigure />
 				</>
@@ -45,10 +60,10 @@ const Sub: FC = () => {
 				<S.InnerArticle>
 					<S.BgFigure />
 					<S.VideoBox>
-						{_.range(0, 9).map((i: number) => (
+						{list.map(({ id, link }) => (
 							<YouTube
-								key={i}
-								videoId="01mms0B7QCY"
+								key={id}
+								videoId={link}
 								className="youtubeVideo"
 								opts={{
 									playerVars: {
